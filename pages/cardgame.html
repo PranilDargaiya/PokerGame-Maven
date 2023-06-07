@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="cardgame.js"></script>
+    <link rel="stylesheet" href="cardgame.css">
+    <title>Card Game</title>
+</head>
+<body>
+    <section>
+    <div class="grid-container">
+        <div class="player-name">Player 1</div>
+        <div id = "card-1" onclick="clickC1P1()"><img src = "images/back.jpg" class = "imgResp" id = "p1c1"></div>
+        <div id = "card-2" onclick="clickC2P1()"><img src = "images/back.jpg" class = "imgResp" id = "p1c2"></div>  
+        <div id = "card-3" onclick="clickC3P1()"><img src = "images/back.jpg" class = "imgResp" id = "p1c3"></div>
+    </div>
+
+    <div class="grid-container">
+        <div class="player-name">Player 2</div>
+        <div id = "card-4" onclick="clickC1P2()"><img src = "images/back.jpg" class = "imgResp" id = "p2c1"></div>
+        <div id = "card-5" onclick="clickC2P2()"><img src = "images/back.jpg" class = "imgResp" id = "p2c2"></div>  
+        <div id = "card-6" onclick="clickC3P2()"><img src = "images/back.jpg" class = "imgResp" id = "p2c3"></div>
+    </div>
+
+    <div class="grid-container-2">
+        <div id = "button-1" onclick="clickBtnOne()">Show Highest Card</div>
+        <div id="points-1">Points Earned</div>
+        <div id="highest-card-1"><img src = "images/back.jpg" class = "imgResp2" id = "highCard1" ></div>
+    </div>
+
+    <div class="grid-container-2">
+        <div id = "button-2" onclick="clickBtnTwo()">Show Highest Card</div>
+        <div id="points-2">Points Earned</div>
+        <div id="highest-card-2"><img src = "images/back.jpg" class = "imgResp2" id = "highCard2"></div>
+    </div>
+    </section>
+
+    <script>
+        document.getElementById("points-1").style.display = "none";  
+        document.getElementById("points-2").style.display = "none";  
+        document.getElementById("highest-card-1").style.display = "none";  
+        document.getElementById("highest-card-2").style.display = "none";  
+
+        function setCardImage(cardValue, elementId) {
+        switch (cardValue) {
+            case "SPADE-ACE":
+                document.getElementById(elementId).src = "./images/spade/ace.jpg";
+                break;
+            case "SPADE-TWO":
+                document.getElementById(elementId).src = "./images/spade/two.jpg";
+                break;
+            case "SPADE-THREE":
+                document.getElementById(elementId).src = "./images/spade/three.jpg";
+                break;
+            case "SPADE-FOUR":
+                document.getElementById(elementId).src = "./images/spade/four.jpg";
+                break;
+            case "SPADE-FIVE":
+                document.getElementById(elementId).src = "./images/spade/five.jpg";
+                break;
+            case "SPADE-SIX":
+                document.getElementById(elementId).src = "./images/spade/six.jpg";
+                break;
+            case "SPADE-SEVEN":
+                document.getElementById(elementId).src = "./images/spade/seven.jpg";
+                break;
+            case "SPADE-EIGHT":
+                document.getElementById(elementId).src = "./images/spade/eight.jpg";
+                break;
+            case "SPADE-NINE":
+                document.getElementById(elementId).src = "./images/spade/nine.jpg";
+                break;
+            case "SPADE-TEN":
+                document.getElementById(elementId).src = "./images/spade/ten.jpg";
+                break;
+            case "SPADE-JACK":
+                document.getElementById(elementId).src = "./images/spade/jack.jpg";
+                break;
+            case "SPADE-QUEEN":
+                document.getElementById(elementId).src = "./images/spade/queen.jpg";
+                break;
+            case "SPADE-KING":
+                document.getElementById(elementId).src = "./images/spade/king.jpg";
+                break;
+
+            case "HEART-ACE":
+                document.getElementById(elementId).src = "./images/HEART/ace.jpg";
+                break;
+            case "HEART-TWO":
+                document.getElementById(elementId).src = "./images/HEART/two.jpg";
+                break;
+            case "HEART-THREE":
+                document.getElementById(elementId).src = "./images/HEART/three.jpg";
+                break;
+            case "HEART-FOUR":
+                document.getElementById(elementId).src = "./images/HEART/four.jpg";
+                break;
+            case "HEART-FIVE":
+                document.getElementById(elementId).src = "./images/HEART/five.jpg";
+                break;
+            case "HEART-SIX":
+                document.getElementById(elementId).src = "./images/HEART/six.jpg";
+                break;
+            case "HEART-SEVEN":
+                document.getElementById(elementId).src = "./images/HEART/seven.jpg";
+                break;
+            case "HEART-EIGHT":
+                document.getElementById(elementId).src = "./images/HEART/eight.jpg";
+                break;
+            case "HEART-NINE":
+                document.getElementById(elementId).src = "./images/HEART/nine.jpg";
+                break;
+            case "HEART-TEN":
+                document.getElementById(elementId).src = "./images/HEART/ten.jpg";
+                break;
+            case "HEART-JACK":
+                document.getElementById(elementId).src = "./images/HEART/jack.jpg";
+                break;
+            case "HEART-QUEEN":
+                document.getElementById(elementId).src = "./images/HEART/queen.jpg";
+                break;
+            case "HEART-KING":
+                document.getElementById(elementId).src = "./images/HEART/king.jpg";
+                break;
+
+            case "DIAMOND-ACE":
+                document.getElementById(elementId).src = "./images/DIAMOND/ace.jpg";
+                break;
+            case "DIAMOND-TWO":
+                document.getElementById(elementId).src = "./images/DIAMOND/two.jpg";
+                break;
+            case "DIAMOND-THREE":
+                document.getElementById(elementId).src = "./images/DIAMOND/three.jpg";
+                break;
+            case "DIAMOND-FOUR":
+                document.getElementById(elementId).src = "./images/DIAMOND/four.jpg";
+                break;
+            case "DIAMOND-FIVE":
+                document.getElementById(elementId).src = "./images/DIAMOND/five.jpg";
+                break;
+            case "DIAMOND-SIX":
+                document.getElementById(elementId).src = "./images/DIAMOND/six.jpg";
+                break;
+            case "DIAMOND-SEVEN":
+                document.getElementById(elementId).src = "./images/DIAMOND/seven.jpg";
+                break;
+            case "DIAMOND-EIGHT":
+                document.getElementById(elementId).src = "./images/DIAMOND/eight.jpg";
+                break;
+            case "DIAMOND-NINE":
+                document.getElementById(elementId).src = "./images/DIAMOND/nine.jpg";
+                break;
+            case "DIAMOND-TEN":
+                document.getElementById(elementId).src = "./images/DIAMOND/ten.jpg";
+                break;
+            case "DIAMOND-JACK":
+                document.getElementById(elementId).src = "./images/DIAMOND/jack.jpg";
+                break;
+            case "DIAMOND-QUEEN":
+                document.getElementById(elementId).src = "./images/DIAMOND/queen.jpg";
+                break;
+            case "DIAMOND-KING":
+                document.getElementById(elementId).src = "./images/DIAMOND/king.jpg";
+                break;
+
+            case "CLUB-ACE":
+                document.getElementById(elementId).src = "./images/CLUB/ace.jpg";
+                break;
+            case "CLUB-TWO":
+                document.getElementById(elementId).src = "./images/CLUB/two.jpg";
+                break;
+            case "CLUB-THREE":
+                document.getElementById(elementId).src = "./images/CLUB/three.jpg";
+                break;
+            case "CLUB-FOUR":
+                document.getElementById(elementId).src = "./images/CLUB/four.jpg";
+                break;
+            case "CLUB-FIVE":
+                document.getElementById(elementId).src = "./images/CLUB/five.jpg";
+                break;
+            case "CLUB-SIX":
+                document.getElementById(elementId).src = "./images/CLUB/six.jpg";
+                break;
+            case "CLUB-SEVEN":
+                document.getElementById(elementId).src = "./images/CLUB/seven.jpg";
+                break;
+            case "CLUB-EIGHT":
+                document.getElementById(elementId).src = "./images/CLUB/eight.jpg";
+                break;
+            case "CLUB-NINE":
+                document.getElementById(elementId).src = "./images/CLUB/nine.jpg";
+                break;
+            case "CLUB-TEN":
+                document.getElementById(elementId).src = "./images/CLUB/ten.jpg";
+                break;
+            case "CLUB-JACK":
+                document.getElementById(elementId).src = "./images/CLUB/jack.jpg";
+                break;
+            case "CLUB-QUEEN":
+                document.getElementById(elementId).src = "./images/CLUB/queen.jpg";
+                break;
+            case "CLUB-KING":
+                document.getElementById(elementId).src = "./images/CLUB/king.jpg";
+                break;
+        }
+        }
+        
+        function clickC1P1() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c1p1 = data.CARD2[3];
+                    setCardImage(c1p1, "p1c1");                        
+
+            });
+        }
+        function clickC2P1() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c2p1 = data.CARD2[4];
+                    setCardImage(c2p1, "p1c2");                        
+            });
+        }
+        function clickC3P1() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c3p1 = data.CARD2[5];
+                    setCardImage(c3p1, "p1c3");
+            });
+        }
+        
+        const c1 = document.getElementById("card-1");
+        const c2 = document.getElementById("card-2");
+        const c3 = document.getElementById("card-3");
+        const b1 = document.getElementById("button-1");
+        let firstThreeClicked = 0;
+        c1.addEventListener('click', () => {
+            firstThreeClicked++;
+            checkClicks();
+        });
+        c2.addEventListener('click', () => {
+            firstThreeClicked++;
+            checkClicks();
+        });
+        c3.addEventListener('click', () => {
+            firstThreeClicked++;
+            checkClicks();
+        });
+
+        b1.style.pointerEvents = 'none';
+
+        function checkClicks() {
+            if (firstThreeClicked === 3) {
+                b1.style.pointerEvents = 'auto';
+            }
+        }
+        b1.addEventListener('click', () => {
+        });
+
+        function clickC1P2() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c1p2 = data.CARD2[0];
+                    setCardImage(c1p2, "p2c1");                        
+            });
+        }
+        function clickC2P2() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c2p2 = data.CARD2[1];
+                    setCardImage(c2p2, "p2c2"); 
+            });
+        }
+        function clickC3P2() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const c3p2 = data.CARD2[2];
+                    setCardImage(c3p2, "p2c3");
+            });
+        }
+
+        const c4 = document.getElementById("card-4");
+        const c5 = document.getElementById("card-5");
+        const c6 = document.getElementById("card-6");
+        const b2 = document.getElementById("button-2");
+        let firstThreeClickedP2 = 0;
+        c4.addEventListener('click', () => {
+            firstThreeClickedP2++;
+            checkClicksP2();
+        });
+        c5.addEventListener('click', () => {
+            firstThreeClickedP2++;
+            checkClicksP2();
+        });
+        c6.addEventListener('click', () => {
+            firstThreeClickedP2++;
+            checkClicksP2();
+        });
+
+        b2.style.pointerEvents = 'none';
+
+        function checkClicksP2() {
+            if (firstThreeClickedP2 === 3) {
+                b2.style.pointerEvents = 'auto';
+            }
+        }
+        b2.addEventListener('click', () => {
+        });
+
+        function clickBtnOne() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const highestP1 = data.HighCardP1;
+                    const weightP1 = data.HighWeightP1;
+                    setCardImage(highestP1, "highCard1");                      
+                    document.getElementById("points-1").textContent = "Point Earned " + weightP1;
+            });
+            var points = document.getElementById("points-1");
+            if (points.style.display === "none") {
+                points.style.display = "block";
+            }
+            var card = document.getElementById("highest-card-1");
+            if (card.style.display === "none") {
+                card.style.display = "block";
+            }
+        }
+        function clickBtnTwo() {
+            fetch('../json/test.json')
+                .then(res => res.json()) 
+                .then(data => {
+                    const highestP2 = data.HighCardP2;
+                    const weightP2 = data.HighWeightP2;
+                    setCardImage(highestP2, "highCard2");                                 
+                    document.getElementById("points-2").textContent = "Point Earned " + weightP2;
+            });
+            var points = document.getElementById("points-2");
+            if (points.style.display === "none") {
+                points.style.display = "block";
+            }
+            var card = document.getElementById("highest-card-2");
+            if (card.style.display === "none") {
+                card.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+</html>

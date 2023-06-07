@@ -1,0 +1,134 @@
+html{
+    overflow-y: scroll;
+}
+body {
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    line-height: 1.6;
+    overflow: hidden;
+    background: linear-gradient(45deg, #061de3, #e306ca);
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+section {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1w;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1vw;
+    flex: 1 0 130px;
+}
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1vw;
+    flex: 1 0 130px;
+}
+.imgResp {
+    width: 70%;
+    height: auto;
+}
+.imgResp2 {
+    width: 30%;
+    height: auto;
+}
+#card-1 {
+    text-align: center;
+}
+#card-2 {
+    text-align: center;
+}
+#card-3 {
+    text-align: center;
+}
+#card-4 {
+    text-align: center;
+}
+#card-5 {
+    text-align: center;
+}
+#card-6 {
+    text-align: center;
+}
+.player-name {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    font-size: 1.6vw;
+}
+#points-1 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    font-size: 1.6vw;
+}
+#points-2 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    font-size: 1.6vw;
+}
+#highest-card-1 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+#highest-card-2 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+#button-1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background: linear-gradient(90deg, #e306ca, #061de3);
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    text-align: center;
+    font-size: 1.6vw;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#button-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background: linear-gradient(90deg, #e306ca, #061de3);
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-align: center;
+    font-size: 1.6vw;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#button-1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#button-2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
